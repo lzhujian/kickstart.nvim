@@ -30,10 +30,10 @@ bufferline.setup {
   },
 }
 
-for i = 1, 9 do
+for i = 1, 6 do
   vim.keymap.set('n', '<leader>' .. i, function()
     bufferline.go_to(i, true)
-  end)
+  end, { desc = 'Move to tab index ' .. i })
 end
 
 vim.keymap.set('n', '<C-j>', '<Cmd>BufferLineMovePrev<CR>', { desc = 'Move current buffer previous' })

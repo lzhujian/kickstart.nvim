@@ -196,6 +196,14 @@ vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' }
 -- vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 -- vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
+-- split window keymap --
+vim.keymap.set('n', '<leader>sl', '<Cmd>set splitright<CR><Cmd>vsplit<CR>', { desc = 'Split window right' })
+vim.keymap.set('n', '<leader>sv', '<Cmd>set splitbelow<CR><Cmd>split<CR>', { desc = 'Split window below' })
+vim.keymap.set('n', '<C-b><C-j>', '<Cmd>res -5<CR>', { desc = 'Adjust window -5' })
+vim.keymap.set('n', '<C-b><C-k>', '<Cmd>res +5<CR>', { desc = 'Adjust window +5' })
+vim.keymap.set('n', '<C-b><C-l>', '<Cmd>vertical res -5<CR>', { desc = 'Adjust window vertical -5' })
+vim.keymap.set('n', '<C-b><C-h>', '<Cmd>vertical res +5<CR>', { desc = 'Adjust window vertical +5' })
+
 -- nvimtree ctrl-m 打开或关闭文件浏览器
 vim.keymap.set('n', '<C-m>', ':NvimTreeToggle<CR>', { desc = 'NVimTree show/hide' })
 
