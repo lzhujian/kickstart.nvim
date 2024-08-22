@@ -36,8 +36,11 @@ for i = 1, 9 do
   end)
 end
 
-vim.keymap.set('n', '<C-j>', '<Cmd>BufferLineMovePrev<CR>')
-vim.keymap.set('n', '<C-k>', '<Cmd>BufferLineMoveNext<CR>')
+vim.keymap.set('n', '<C-j>', '<Cmd>BufferLineMovePrev<CR>', { desc = 'Move current buffer previous' })
+vim.keymap.set('n', '<C-k>', '<Cmd>BufferLineMoveNext<CR>', { desc = 'Move current buffer next' })
+vim.keymap.set('n', '<C-h>', ':BufferLineCyclePrev<CR>', { desc = 'Move to previous buffer tab' })
+vim.keymap.set('n', '<C-l>', ':BufferLineCycleNext<CR>', { desc = 'Move to next buffer tab' })
+
 -- close current tab --
 vim.keymap.set('n', '<C-x>', function()
   if vim.bo.modified then
