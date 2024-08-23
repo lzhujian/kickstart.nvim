@@ -210,6 +210,10 @@ vim.keymap.set('n', '<C-m>', ':NvimTreeToggle<CR>', { desc = 'NVimTree show/hide
 -- Toggle symbols outline --
 vim.keymap.set('n', '<C-s>', '<Cmd>SymbolsOutline<CR>', { desc = 'Toggle symbols outline' })
 
+-- Switch between source/header --
+vim.keymap.set('n', '<C-o>', '<Cmd>ClangdSwitchSourceHeader<CR>', { desc = 'Switch between source/header' })
+vim.keymap.set('n', '<C-i>', '<Cmd>ClangdShowSymbolInfo<CR>', { desc = 'Show symbol info' })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
@@ -890,6 +894,17 @@ require('lazy').setup({
           Fragment = { icon = '', hl = '@constant' },
         },
       }
+    end,
+  },
+
+  -- Persist and toggle multiple terminals during an editing session
+  {
+    'akinsho/toggleterm.nvim',
+    version = '*',
+    opts = {--[[ things you want to change go here]]
+    },
+    config = function()
+      -- require 'config.toggleterm'
     end,
   },
 
